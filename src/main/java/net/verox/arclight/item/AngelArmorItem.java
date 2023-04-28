@@ -1,5 +1,7 @@
 package net.verox.arclight.item;
 
+import com.google.common.collect.ImmutableMap;
+import net.fabricmc.fabric.api.entity.event.v1.FabricElytraItem;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.Entity;
@@ -9,14 +11,11 @@ import net.minecraft.entity.decoration.ArmorStandEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.ArmorItem;
-import net.minecraft.item.ArmorMaterial;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
+import net.minecraft.item.*;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 import net.minecraft.world.World;
-import org.spongepowered.include.com.google.common.collect.ImmutableMap;
+import net.minecraft.world.event.GameEvent;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.PlayState;
 import software.bernie.geckolib3.core.builder.AnimationBuilder;
@@ -31,19 +30,48 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
-public class AngelArmorItem extends ArmorItem implements IAnimatable {
+public class AngelArmorItem extends ArmorItem implements IAnimatable, FabricElytraItem {
 
     private final AnimationFactory factory = new AnimationFactory(this);
 
     @Override
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
         if(Screen.hasShiftDown()) {
-            tooltip.add(Text.literal("Full armor set will give Creative-Flight!").formatted(Formatting.AQUA));
+            tooltip.add(Text.literal("Chestplate will give you Elytra-Flight!").formatted(Formatting.AQUA));
         } else {
             tooltip.add(Text.literal("Press Shift!").formatted(Formatting.DARK_GRAY));
         }
 
         super.appendTooltip(stack, world, tooltip, context);
+    }
+
+    public static boolean isUsable(ItemStack stack) {
+        return stack.getDamage() < stack.getMaxDamage() - 1;
+    }
+
+    public boolean useCustomElytra(LivingEntity entity, ItemStack chestStack, boolean tickElytra) {
+        if (AngelArmorItem.isUsable(chestStack)) {
+            if (tickElytra) {
+                doVanillaElytraTick(entity, chestStack);
+            }
+
+            return true;
+        }
+
+        return false;
+    }
+
+
+    public void doVanillaElytraTick(LivingEntity entity, ItemStack chestStack) {
+        int nextRoll = entity.getRoll() + 1;
+
+        if (!entity.world.isClient && nextRoll % 10 == 0) {
+            if ((nextRoll / 10) % 2 == 0) {
+                chestStack.damage(1, entity, p -> p.sendEquipmentBreakStatus(EquipmentSlot.CHEST));
+            }
+
+            entity.emitGameEvent(GameEvent.ELYTRA_GLIDE);
+        }
     }
 
     private static final Map<ArmorMaterial, StatusEffectInstance> MATERIAL_TO_EFFECT_MAP =
@@ -69,10 +97,6 @@ public class AngelArmorItem extends ArmorItem implements IAnimatable {
 
                 if(hasFullSuitOfArmorOn(player)) {
                     evaluateArmorEffects(player);
-                } else if (!hasFullSuitOfArmorOn(player)) {
-                    player.getAbilities().allowFlying = false;
-                    player.getAbilities().flying = false;
-                    player.sendAbilitiesUpdate();
                 }
             }
         }
@@ -112,10 +136,6 @@ public class AngelArmorItem extends ArmorItem implements IAnimatable {
             player.addStatusEffect(new StatusEffectInstance(mapStatusEffect.getEffectType(),
                     mapStatusEffect.getDuration(), mapStatusEffect.getAmplifier(), mapStatusEffect.isAmbient(), mapStatusEffect.shouldShowParticles()));
 
-        }
-        if(hasFullSuitOfArmorOn(player) && !player.getAbilities().allowFlying) {
-            player.getAbilities().allowFlying = true;
-            player.sendAbilitiesUpdate();
         }
     }
 

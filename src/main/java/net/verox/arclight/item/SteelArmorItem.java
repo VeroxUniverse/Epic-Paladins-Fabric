@@ -1,5 +1,6 @@
 package net.verox.arclight.item;
 
+import com.google.common.collect.ImmutableMap;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
@@ -12,7 +13,6 @@ import net.minecraft.item.ArmorMaterial;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
-import org.spongepowered.include.com.google.common.collect.ImmutableMap;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.PlayState;
 import software.bernie.geckolib3.core.builder.AnimationBuilder;
@@ -34,6 +34,12 @@ public class SteelArmorItem extends ArmorItem implements IAnimatable {
             (new ImmutableMap.Builder<ArmorMaterial, StatusEffectInstance>())
                     .put(ModArmorMaterials.STEEL,
                             new StatusEffectInstance(StatusEffects.SPEED, 20, 0,
+                                    false, false)).build();
+
+    private static final Map<ArmorMaterial, StatusEffectInstance> MATERIAL_TO_EFFECT_MAP2 =
+            (new ImmutableMap.Builder<ArmorMaterial, StatusEffectInstance>())
+                    .put(ModArmorMaterials.STEEL,
+                            new StatusEffectInstance(StatusEffects.STRENGTH, 20, 0,
                                     false, false)).build();
     public SteelArmorItem(ArmorMaterial material, EquipmentSlot slot, Settings settings) {
         super(material, slot, settings);
@@ -64,9 +70,16 @@ public class SteelArmorItem extends ArmorItem implements IAnimatable {
                 System.out.println(mapStatusEffect.shouldShowParticles());
             }
         }
+        for (Map.Entry<ArmorMaterial, StatusEffectInstance> entry2 : MATERIAL_TO_EFFECT_MAP2.entrySet()) {
+            ArmorMaterial mapArmorMaterial = entry2.getKey();
+            StatusEffectInstance mapStatusEffect = entry2.getValue();
+
+            if(hasCorrectArmorOn(mapArmorMaterial, player)) {
+                addStatusEffectForMaterial(player, mapArmorMaterial, mapStatusEffect);
+                System.out.println(mapStatusEffect.shouldShowParticles());
+            }
+        }
     }
-
-
 
     private void addStatusEffectForMaterial(PlayerEntity player, ArmorMaterial mapArmorMaterial,
                                             StatusEffectInstance mapStatusEffect) {
@@ -75,7 +88,6 @@ public class SteelArmorItem extends ArmorItem implements IAnimatable {
         if(hasCorrectArmorOn(mapArmorMaterial, player) && !hasPlayerEffect) {
             player.addStatusEffect(new StatusEffectInstance(mapStatusEffect.getEffectType(),
                     mapStatusEffect.getDuration(), mapStatusEffect.getAmplifier(), mapStatusEffect.isAmbient(), mapStatusEffect.shouldShowParticles()));
-
         }
     }
 

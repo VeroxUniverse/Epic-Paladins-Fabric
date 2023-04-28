@@ -1,56 +1,53 @@
 package net.verox.arclight.item;
 
 import net.minecraft.block.Blocks;
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.EquipmentSlot;
-import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ArmorMaterial;
 import net.minecraft.item.Items;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.Lazy;
-import net.verox.arclight.ArclightMod;
 
 import java.util.function.Supplier;
 public enum ModArmorMaterials implements ArmorMaterial {
-    ARCLIGHT("arclight", 45, new int[]{5, 9, 12, 5}, 25,
-            SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE, 4.0F, 0.3F,
+    ARCLIGHT("arclight", 45, new int[]{4, 7, 9, 4}, 25,
+            SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE, 3.0F, 0.0F,
             () -> {return Ingredient.ofItems(ModItems.ARCLIGHT_INGOT);
     }),
 
-    ANGEL("angel", -1, new int[]{9, 15, 20, 9}, 30,
-            SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE, 7.0F, 0.5F,
+    ANGEL("angel", 120, new int[]{5, 9, 9, 5}, 30,
+            SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE, 5.0F, 0.225F,
             () -> {return Ingredient.ofItems(Items.PHANTOM_MEMBRANE);
             }),
 
-    FROZEN("frozen", 30, new int[]{4, 6, 8, 4}, 25,
-            SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE, 2.0F, 0.3F,
+    FROZEN("frozen", 30, new int[]{4, 5, 7, 4}, 25,
+            SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE, 2.0F, 0.0F,
             () -> {return Ingredient.ofItems(Blocks.BLUE_ICE);
             }),
 
-    STEEL("frozen", 30, new int[]{3, 6, 8, 3}, 25,
-            SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE, 2.0F, 0.2F,
+    STEEL("frozen", 30, new int[]{3, 5, 7, 3}, 25,
+            SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE, 2.0F, 0.0F,
             () -> {return Ingredient.ofItems(Items.IRON_INGOT);
             }),
 
-    MOONLIGHT("moonlight", 45, new int[]{5, 9, 12, 5}, 25,
-            SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE, 4.0F, 0.3F,
+    MOONLIGHT("moonlight", 45, new int[]{4, 7, 9, 4}, 25,
+            SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE, 3.0F, 0.0F,
             () -> {return Ingredient.ofItems(ModItems.MOONLIGHT_INGOT);
     }),
 
-    SHADOW("shadow", 50, new int[]{6, 10, 13, 6}, 25,
-            SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE, 5.0F, 0.3F,
+    SHADOW("shadow", 50, new int[]{4, 7, 9, 4}, 25,
+            SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE, 3.0F, 0.0F,
             () -> {return Ingredient.ofItems(ModItems.JADE_INGOT);
     }),
 
-    SCORPIONSCALE("scorpionscale", 50, new int[]{6, 10, 13, 6}, 25,
-            SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE, 5.0F, 0.3F,
+    SCORPIONSCALE("scorpionscale", 50, new int[]{4, 7, 9, 4}, 25,
+            SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE, 3.0F, 0.0F,
             () -> {return Ingredient.ofItems(Items.NETHERITE_INGOT);
             }),
 
-    HOLYKNIGHT("holyknight", 30, new int[]{3, 6, 8, 3}, 25,
-            SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE, 2.0F, 0.2F,
+    HOLYKNIGHT("holyknight", 30, new int[]{3, 5, 7, 3}, 25,
+            SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE, 2.0F, 0.0F,
             () -> {return Ingredient.ofItems(Items.COPPER_INGOT);
     });
 

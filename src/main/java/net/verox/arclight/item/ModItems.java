@@ -72,49 +72,49 @@ public class ModItems {
                     new FabricItemSettings().group(ModGroup.ARCLIGHT_GROUP)));
 
     public static final Item JADE_HOE = registerItem("jade_hoe",
-            new ModHoeItem(ModToolMaterials.JADE_TOOL, -4, 0f,
+            new ModHoeItem(ModToolMaterials.JADE_TOOL, -3, 0f,
                     new FabricItemSettings().group(ModGroup.ARCLIGHT_GROUP)));
 
     //ArclightTools
     public static final Item ARCLIGHT_SWORD = registerItem("arclight_sword",
-            new SwordItem(ModToolMaterials.ARCLIGHT_TOOL, 2, -2.4f,
+            new SwordItem(ModToolMaterials.ARCLIGHT_TOOL, 3, -2.4f,
                     new FabricItemSettings().group(ModGroup.ARCLIGHT_GROUP)));
 
     public static final Item ARCLIGHT_PICKAXE = registerItem("arclight_pickaxe",
-            new ModPickaxeItem(ModToolMaterials.ARCLIGHT_TOOL, 0, -2.8f,
+            new ModPickaxeItem(ModToolMaterials.ARCLIGHT_TOOL, 1, -2.8f,
                     new FabricItemSettings().group(ModGroup.ARCLIGHT_GROUP)));
 
     public static final Item ARCLIGHT_AXE = registerItem("arclight_axe",
-            new ModAxeItem(ModToolMaterials.ARCLIGHT_TOOL, 4, -3f,
+            new ModAxeItem(ModToolMaterials.ARCLIGHT_TOOL, 5, -3f,
                     new FabricItemSettings().group(ModGroup.ARCLIGHT_GROUP)));
 
     public static final Item ARCLIGHT_SHOVEL = registerItem("arclight_shovel",
-            new ModShovelItem(ModToolMaterials.ARCLIGHT_TOOL, 0, -3f,
+            new ModShovelItem(ModToolMaterials.ARCLIGHT_TOOL, 1, -3f,
                     new FabricItemSettings().group(ModGroup.ARCLIGHT_GROUP)));
 
     public static final Item ARCLIGHT_HOE = registerItem("arclight_hoe",
-            new ModHoeItem(ModToolMaterials.ARCLIGHT_TOOL, -4, 0f,
+            new ModHoeItem(ModToolMaterials.ARCLIGHT_TOOL, -3, 0f,
                     new FabricItemSettings().group(ModGroup.ARCLIGHT_GROUP)));
 
     //AlmandineTools
     public static final Item ALMANDINE_SWORD = registerItem("almandine_sword",
-            new SwordItem(ModToolMaterials.ALMANDINE_TOOL, 2, -2.4f,
+            new SwordItem(ModToolMaterials.ALMANDINE_TOOL, 3, -2.4f,
                     new FabricItemSettings().group(ModGroup.ARCLIGHT_GROUP)));
 
     public static final Item ALMANDINE_PICKAXE = registerItem("almandine_pickaxe",
-            new ModPickaxeItem(ModToolMaterials.ALMANDINE_TOOL, 0, -2.8f,
+            new ModPickaxeItem(ModToolMaterials.ALMANDINE_TOOL, 1, -2.8f,
                     new FabricItemSettings().group(ModGroup.ARCLIGHT_GROUP)));
 
     public static final Item ALMANDINE_AXE = registerItem("almandine_axe",
-            new ModAxeItem(ModToolMaterials.ALMANDINE_TOOL, 4, -3f,
+            new ModAxeItem(ModToolMaterials.ALMANDINE_TOOL, 5, -3f,
                     new FabricItemSettings().group(ModGroup.ARCLIGHT_GROUP)));
 
     public static final Item ALMANDINE_SHOVEL = registerItem("almandine_shovel",
-            new ModShovelItem(ModToolMaterials.ALMANDINE_TOOL, 0, -3f,
+            new ModShovelItem(ModToolMaterials.ALMANDINE_TOOL, 1, -3f,
                     new FabricItemSettings().group(ModGroup.ARCLIGHT_GROUP)));
 
     public static final Item ALMANDINE_HOE = registerItem("almandine_hoe",
-            new ModHoeItem(ModToolMaterials.ALMANDINE_TOOL, -4, 0f,
+            new ModHoeItem(ModToolMaterials.ALMANDINE_TOOL, -3, 0f,
                     new FabricItemSettings().group(ModGroup.ARCLIGHT_GROUP)));
 
     //ArclightHalo
@@ -344,7 +344,7 @@ public class ModItems {
                     new FabricItemSettings().group(ModGroup.ARCLIGHT_GROUP).rarity(Rarity.EPIC)));
 
     public static final Item MOONLIGHT_GLAIVE = registerItem("moonlight_glaive",
-            new MoonlightGlaiveItem(ModToolMaterials.MOONLIGHT_TOOL, 6, -3.0f,
+            new MoonlightGlaiveItem(ModToolMaterials.MOONLIGHT_TOOL, 5, -3.0f,
                     new FabricItemSettings().group(ModGroup.ARCLIGHT_GROUP).rarity(Rarity.UNCOMMON)));
 
     public static final Item SCORPION_SCALE = registerItem("scorpion_scale",

@@ -11,7 +11,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "arclight:cloudstone_brick"
+          "name": "arclight:cloudstone_cobbled"
         }
       ],
       "rolls": 1.0

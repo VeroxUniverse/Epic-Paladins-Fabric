@@ -23,7 +23,7 @@ public class ModPlacedFeatures {
                     PlacedFeatures.createCountExtraModifier(0, 0.5f, 2)));
 
     public static final RegistryEntry<PlacedFeature> ARCLIGHT_ORE_PLACED = PlacedFeatures.register("arclight_ore_placed",
-            ModConfiguredFeatures.ARCLIGHT_ORE, ModOreFeatures.modifiersWithCount(3,
+            ModConfiguredFeatures.ARCLIGHT_ORE, ModOreFeatures.modifiersWithCount(5,
                     HeightRangePlacementModifier.trapezoid(YOffset.aboveBottom(74), YOffset.aboveBottom(94))));
 
     public static final RegistryEntry<PlacedFeature> CLOUDSTONE_PLACED = PlacedFeatures.register("cloudstone_placed",
@@ -31,14 +31,14 @@ public class ModPlacedFeatures {
                     HeightRangePlacementModifier.trapezoid(YOffset.aboveBottom(74), YOffset.aboveBottom(150))));
 
     public static final RegistryEntry<PlacedFeature> MOONLIGHT_ORE_PLACED = PlacedFeatures.register("moonligt_ore_placed",
-            ModConfiguredFeatures.MOONLIGHT_ORE, ModOreFeatures.modifiersWithCount(3,
+            ModConfiguredFeatures.MOONLIGHT_ORE, ModOreFeatures.modifiersWithCount(5,
                     HeightRangePlacementModifier.uniform(YOffset.aboveBottom(10), YOffset.aboveBottom(40))));
 
     public static final RegistryEntry<PlacedFeature> ALMANDINE_ORE_PLACED = PlacedFeatures.register("almandine_ore_placed",
-            ModConfiguredFeatures.ALMANDINE_ORE, ModOreFeatures.modifiersWithCount(3,
+            ModConfiguredFeatures.ALMANDINE_ORE, ModOreFeatures.modifiersWithCount(5,
                     HeightRangePlacementModifier.trapezoid(YOffset.aboveBottom(74), YOffset.aboveBottom(94))));
 
     public static final RegistryEntry<PlacedFeature> JADE_ORE_PLACED = PlacedFeatures.register("jade_ore_placed",
-            ModConfiguredFeatures.JADE_ORE, ModOreFeatures.modifiersWithCount(3,
+            ModConfiguredFeatures.JADE_ORE, ModOreFeatures.modifiersWithCount(5,
                     HeightRangePlacementModifier.uniform(YOffset.aboveBottom(40), YOffset.aboveBottom(120))));
 }

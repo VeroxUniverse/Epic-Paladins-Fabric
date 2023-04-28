@@ -78,7 +78,7 @@ public class ModConfiguredFeatures {
 
     public static final RegistryEntry<ConfiguredFeature<OreFeatureConfig, ?>> ARCLIGHT_ORE =
             ConfiguredFeatures.register("arclight_ore", Feature.ORE,
-                    new OreFeatureConfig(OVERWORLD_ARCLIGHT_ORE, 3));
+                    new OreFeatureConfig(OVERWORLD_ARCLIGHT_ORE, 5));
 
     public static final List<OreFeatureConfig.Target> OVERWORLD_ALMANDINE_ORE = List.of(
             OreFeatureConfig.createTarget(OreConfiguredFeatures.STONE_ORE_REPLACEABLES,
@@ -86,7 +86,7 @@ public class ModConfiguredFeatures {
 
     public static final RegistryEntry<ConfiguredFeature<OreFeatureConfig, ?>> ALMANDINE_ORE =
             ConfiguredFeatures.register("almandine_ore", Feature.ORE,
-                    new OreFeatureConfig(OVERWORLD_ALMANDINE_ORE, 3));
+                    new OreFeatureConfig(OVERWORLD_ALMANDINE_ORE, 6));
 
 
     public static final List<OreFeatureConfig.Target> OVERWORLD_CLOUDSTONE = List.of(
@@ -103,7 +103,7 @@ public class ModConfiguredFeatures {
 
     public static final RegistryEntry<ConfiguredFeature<OreFeatureConfig, ?>> MOONLIGHT_ORE =
             ConfiguredFeatures.register("moonlight_ore", Feature.ORE,
-                    new OreFeatureConfig(NETHER_MOONLIGHT_ORE, 3));
+                    new OreFeatureConfig(NETHER_MOONLIGHT_ORE, 6));
 
     public static final List<OreFeatureConfig.Target> END_JADE_ORE = List.of(
             OreFeatureConfig.createTarget(new BlockMatchRuleTest(Blocks.END_STONE),
@@ -111,7 +111,7 @@ public class ModConfiguredFeatures {
 
     public static final RegistryEntry<ConfiguredFeature<OreFeatureConfig, ?>> JADE_ORE =
             ConfiguredFeatures.register("jade_ore", Feature.ORE,
-                    new OreFeatureConfig(END_JADE_ORE, 3));
+                    new OreFeatureConfig(END_JADE_ORE, 6));
 
 
     public static void registerConfiguredFeatures() {
