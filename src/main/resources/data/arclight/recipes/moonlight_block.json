@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "key": {
     "#": {
-      "item": "arclight:arclight_crystal"
+      "item": "arclight:moonlight_crystal"
     }
   },
   "pattern": [
@@ -11,6 +11,6 @@
     "###"
   ],
   "result": {
-    "item": "arclight:arclight_block"
+    "item": "arclight:moonlight_block"
   }
 }
